@@ -75,6 +75,18 @@ As an air traffic controller
 To ensure safety
 I want to prevent landing when the airport is full
 
+2.6.0 :003 > airport = Airport.new
+ => #<Airport:0x00007ff5001c3200 @planes=[]>
+2.6.0 :004 > plane = Plane.new
+ => #<Plane:0x00007ff5001cac80>
+2.6.0 :005 > plane2 = Plane.new
+ => #<Plane:0x00007ff5001d2958>
+2.6.0 :006 > airport.land(plane)
+ => [#<Plane:0x00007ff5001cac80>]
+2.6.0 :007 > airport.land(plane2)
+ => [#<Plane:0x00007ff5001cac80>, #<Plane:0x00007ff5001d2958>]
+ -- Assuming a default capacity of 1 (a very small, regional airport!), I expect an error to be thrown here as the capacity would be exceeded.
+
 As the system designer
 So that the software can be used for many different airports
 I would like a default airport capacity that can be overridden as appropriate
