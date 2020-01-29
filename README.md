@@ -57,6 +57,20 @@ As an air traffic controller
 So I can get passengers on the way to their destination
 I want to instruct a plane to take off from an airport and confirm that it is no longer in the airport
 
+2.6.0 :003 > airport = Airport.new
+ => #<Airport:0x00007f89f0921a18 @planes=[]>
+2.6.0 :004 > plane = Plane.new
+ => #<Plane:0x00007f89f0918b98>
+2.6.0 :005 > airport.land(plane)
+ => [#<Plane:0x00007f89f0918b98>]
+2.6.0 :006 > airport.take_off(plane)
+Traceback (most recent call last):
+        4: from /Users/gregpaul/.rvm/rubies/ruby-2.6.0/bin/irb:23:in `<main>'
+        3: from /Users/gregpaul/.rvm/rubies/ruby-2.6.0/bin/irb:23:in `load'
+        2: from /Users/gregpaul/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/irb-1.0.0/exe/irb:11:in `<top (required)>'
+        1: from (irb):6
+NoMethodError (undefined method `take_off' for #<Airport:0x00007f89f0921a18>)
+
 As an air traffic controller
 To ensure safety
 I want to prevent landing when the airport is full

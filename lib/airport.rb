@@ -8,4 +8,12 @@ class Airport
   def land(plane)
     @planes << plane
   end
+
+  def take_off(plane)
+    if @planes != []
+      @planes.pop
+    else
+      raise 'No planes available'
+    end
+  end
 end
