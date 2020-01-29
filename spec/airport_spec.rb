@@ -41,4 +41,14 @@ describe Airport do
     airport.land(plane)
     expect { airport.land(plane2) }.to raise_error(an_instance_of(RuntimeError), 'Airport already at capacity!')
   end
+
+  it "should accept larger airports with larger capacities" do
+    airport = Airport.new(2)
+    plane = Plane.new
+    plane2 = Plane.new
+    plane3 = Plane.new
+    airport.land(plane)
+    airport.land(plane2)
+    expect { airport.land(plane3) }.to raise_error(an_instance_of(RuntimeError), 'Airport already at capacity!')
+  end
 end

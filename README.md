@@ -91,6 +91,20 @@ As the system designer
 So that the software can be used for many different airports
 I would like a default airport capacity that can be overridden as appropriate
 
+2.6.0 :001 > require './lib/plane.rb'
+ => true
+2.6.0 :002 > require './lib/airport.rb'
+ => true
+2.6.0 :003 > airport = Airport.new(20)
+Traceback (most recent call last):
+        6: from /Users/gregpaul/.rvm/rubies/ruby-2.6.0/bin/irb:23:in `<main>'
+        5: from /Users/gregpaul/.rvm/rubies/ruby-2.6.0/bin/irb:23:in `load'
+        4: from /Users/gregpaul/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/irb-1.0.0/exe/irb:11:in `<top (required)>'
+        3: from (irb):3
+        2: from (irb):3:in `new'
+        1: from /Users/gregpaul/Desktop/WORKSPACE/Makers/airport_challenge/lib/airport.rb:4:in `initialize'
+ArgumentError (wrong number of arguments (given 1, expected 0))
+
 As an air traffic controller
 To ensure safety
 I want to prevent takeoff when weather is stormy
